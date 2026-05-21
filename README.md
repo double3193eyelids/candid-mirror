@@ -8,7 +8,7 @@
 
 [![Status](https://img.shields.io/badge/status-beta-orange)](https://github.com/your-org/candid-mirror)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-0.5.5-blue)](./candid-mirror/SKILL.md)
+[![Version](https://img.shields.io/badge/version-0.5.6-blue)](./candid-mirror/SKILL.md)
 
 </div>
 
@@ -24,8 +24,8 @@
 
 ## ✨ 功能亮点
 
-- 🔍 **自动行为扫描** — 读取 OpenClaw 会话日志，7 天数据一键复盘，零配置开箱即用
-- ⚠️ **智能预警检测** — 超级会话、高频短会话、深夜作业、副智能体闲置等 7 类硬信号预警
+- 🔍 **自动行为扫描** — 读取 Agent 会话日志，7 天数据一键复盘，零配置开箱即用
+- ⚠️ **智能预警检测** — 超级会话、高频短会话、深夜作业、错误循环、挫退模式等 9 类硬信号预警
 - 💡 **可执行建议** — 每条建议附带数据证据 + 因果诊断 + 具体动作，不说正确的废话
 - 🪞 **魏征口吻** — 自称"臣"称你"陛下"，预警和建议用古文节奏进谏，数据表格保持严谨
 - 📈 **基线追踪** — 自动记录历史基线，每周对比变化趋势，建议采纳状态全程追踪
@@ -69,6 +69,8 @@
 
 ## 📦 安装
 
+> ⚠️ **平台支持说明**：当前版本**仅适配 QClaw / OpenClaw** 的数据路径（`~/.qclaw/` 或 `~/.openclaw/`）。Claude Code、Codex、Cursor、Trae、Hermes 等平台的适配正在开发中，详见下方 [平台适配进度](#-平台适配进度)。
+
 ### 方式一：手动安装（OpenClaw / QClaw）
 
 ```bash
@@ -91,7 +93,7 @@ npx skills add candid-mirror
 npx openclaw skill add candid-mirror
 ```
 
-> 💡 其他平台（Claude Code、Codex、Hermes）的适配路径已写入 SKILL.md，但**未经实测验证**，欢迎提 PR 补充。
+> ⚠️ 其他平台（Claude Code、Codex、Hermes）的数据路径已写入 SKILL.md，但**未经实测验证，可能无法正常读取数据**。如果你在其他平台成功运行，欢迎提 PR 或 Issue 反馈。
 
 ---
 
@@ -147,7 +149,7 @@ npx openclaw skill add candid-mirror
 
 ```
 candid-mirror/
-├── SKILL.md                    # 核心指令文件（V5.5）
+├── SKILL.md                    # 核心指令文件（V5.6）
 ├── tips.md                     # Tips 知识库（20条，按画像×场景匹配）
 ├── candid-mirror.yaml          # 用户配置（含个人数据，已 gitignore）
 ├── candid-mirror.yaml.example  # 配置模板
@@ -177,19 +179,3 @@ candid-mirror/
 ---
 
 ## 🏷️ 状态
-
-**Beta** — 已在 OpenClaw/QClaw 平台实测验证，Claude Code/Codex/Hermes 路径写入但未验证。欢迎其他平台用户测试反馈。
-
-## 📜 License
-
-[MIT](LICENSE)
-
----
-
-<div align="center">
-
-**以Agent为镜，可以知得失。**
-
-*Your AI usage patterns are a mirror — look into it, and you'll see what's working and what's not.*
-
-</div>
