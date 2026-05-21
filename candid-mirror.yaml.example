@@ -1,0 +1,39 @@
+# 魏征 · Candid Mirror 配置文件模板
+# 复制本文件为 candid-mirror.yaml 后使用：cp candid-mirror.yaml.example candid-mirror.yaml
+# 本文件由魏征自动维护，日常无需手动修改
+
+profile:
+  primary_goal: ""          # 主要目的：赚钱为主 / 做产品为主 / 学习为主（首次运行时自动校准）
+  usage_depth: ""           # 使用深度：轻度 / 中等 / 重度（首次运行时自动校准）
+  work_style: ""            # 工作风格：探索型 / 执行型 / 混合型（自动推断）
+  notes: ""                 # 用户事实纠正记录（对话中用户纠正时自动写入）
+  focus_next: ""            # 用户方向意图记录（对话中用户告知时自动写入）
+
+preferences:
+  report_format: "表格"     # 报告格式：表格 | 列表
+  alert_level: "标准"       # 预警级别：克制 | 标准 | 详细
+  advice_style: "直白"      # 建议风格：委婉 | 直白
+  language: "中文"          # 输出语言：中文 | English
+
+baselines:
+  last_run: ""              # 上次运行日期 (YYYY-MM-DD)，每次运行自动更新
+  weekly_avg_sessions: null # 上周日均会话数，每次运行自动更新
+  weekly_avg_turns: null    # 上周日均改轮次，每次运行自动更新
+  weekly_active_days: null  # 上周活跃天数，每次运行自动更新
+
+suggestions:
+  history: []               # 建议追踪历史，每次运行自动追加
+  # 格式：[{date, category, title, status}]
+  # status 取值：pending(待确认) | adopted(已采纳) | ignored(已忽略)
+  # 示例：
+  # - date: "2026-05-20"
+  #   category: "效率"
+  #   title: "执行型任务改轮次过高，建议写更清晰的初始提示词"
+  #   status: "pending"
+
+guard:
+  installed: false          # 是否已输出过守卫规则（首次运行后自动设为 true）
+  threshold_deep: 80        # 深度会话预警轮次
+  threshold_night_start: 1  # 深夜开始时间（小时，24h制）
+  threshold_night_end: 7    # 深夜结束时间（小时，24h制）
+  threshold_rewrite: 3      # 反复修改预警次数
